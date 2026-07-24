@@ -16,6 +16,8 @@ Aero has 2 main purposes:
 | Aero | 6000 | 30% |
 | Samsung Health | 5300 | 20% |
 
-      **Total: 5360 Steps**
+**Total: 5360 Steps**
+
+## Screenshots
 
   
