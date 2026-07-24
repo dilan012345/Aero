@@ -13,8 +13,7 @@ Aero has 2 main purposes:
       50% bias: Google Health: 5,000 steps
       30% bias: Aero: 6000 steps
       20% bias: Samsung Health: 5300 steps
-
-  | Provider | Steps | Bias |
+| Provider | Steps | Bias |
 |----------|------:|-----:|
 | Google Health | 5000 | 50% |
 | Aero | 6000 | 30% |
