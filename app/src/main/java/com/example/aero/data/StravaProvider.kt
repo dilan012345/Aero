@@ -1,0 +1,12 @@
+package com.example.aero.data
+
+class StravaProvider : Provider {
+    override val type = ProviderType.STRAVA
+    override suspend fun getSteps(): Int {
+        return 50 // Health Connect code later
+    }
+
+    override suspend fun getCalories(): Int {
+        return 0
+    }
+}

@@ -9,7 +9,12 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
+import com.example.aero.viewmodel.SettingsViewModel
 
 private val LightColors = lightColorScheme(
     primary = LightPrimary,
@@ -29,9 +34,10 @@ private val DarkColors = darkColorScheme(
 
 @Composable
 fun AeroTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean,
     content: @Composable () -> Unit
 ) {
+
     MaterialTheme(
         colorScheme = if (darkTheme) {
             DarkColors

@@ -20,6 +20,39 @@ val recentgrotesk = FontFamily(
         weight = FontWeight.Normal
     )
 )
+
+val coolvetica = FontFamily(
+    Font(
+        resId = R.font.coolvetica,
+        weight = FontWeight.Normal
+    )
+)
+
+val robotosb = FontFamily(
+    Font(
+        resId = R.font.robotosb,
+        weight = FontWeight.Normal
+    )
+)
+val samsungsans = FontFamily(
+    Font(
+        resId = R.font.samsungsans,
+        weight = FontWeight.Normal
+    )
+)
+
+val samsungsharpsans = FontFamily(
+    Font(
+        resId = R.font.samsungsharpsans,
+        weight = FontWeight.Normal
+    )
+)
+val roboto = FontFamily(
+    Font(
+        resId = R.font.roboto,
+        weight = FontWeight.Normal
+    )
+)
 val Typography = Typography(
     titleLarge = TextStyle(
         fontFamily = recentgrotesk,
