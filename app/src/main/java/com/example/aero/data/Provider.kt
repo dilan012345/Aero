@@ -5,4 +5,6 @@ interface Provider {
 
     suspend fun getSteps(): Int
     suspend fun getCalories(): Int
+
+    suspend fun getSleep(): Double
 }

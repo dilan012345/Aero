@@ -18,7 +18,7 @@ fun Stamp(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit,
     color: Color = MaterialTheme.colorScheme.surface,
-    borderColor: Color = Color.DarkGray,
+    borderColor: Color = MaterialTheme.colorScheme.tertiary,
     borderWidth: Float = 6f,
     wobble: Float = 4f,
     points: Int = 16

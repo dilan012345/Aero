@@ -9,4 +9,7 @@ class StravaProvider : Provider {
     override suspend fun getCalories(): Int {
         return 0
     }
+    override suspend fun getSleep(): Double {
+        return 0.0
+    }
 }

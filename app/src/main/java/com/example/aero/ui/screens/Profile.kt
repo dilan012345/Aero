@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
@@ -14,18 +15,31 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.material3.SegmentedButton
+import androidx.compose.material3.SegmentedButtonDefaults
+import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.graphics.BlendMode
@@ -36,6 +50,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.datastore.dataStore
@@ -47,9 +62,11 @@ import com.example.aero.R
 import com.example.aero.data.Provider
 import com.example.aero.data.ProviderType
 import com.example.aero.ui.components.Background
+import com.example.aero.ui.components.Card
 import com.example.aero.ui.theme.coolvetica
 import com.example.aero.ui.theme.googlesans
 import com.example.aero.ui.theme.roboto
+import com.example.aero.ui.theme.robotosb
 import com.example.aero.ui.theme.samsungsharpsans
 import com.example.aero.viewmodel.SettingsViewModel
 import org.koin.androidx.compose.koinViewModel
@@ -61,7 +78,7 @@ enum class SettingType {
     AUTO_UPDATE,
     CLOUD_SYNC,
     AUTO_CORRECT,
-    HIDDEN_NOTES,
+    EXPERIMENTAL,
     DEVELOPER_MODE
 }
 
@@ -72,13 +89,16 @@ class Profile(private val activeProvider: Provider)
         val settingsViewModel: SettingsViewModel = koinViewModel()
         val darkTheme by settingsViewModel.darkTheme.collectAsState()
         Background {
-
+            var weight by remember { mutableStateOf("") }
+            var age by remember { mutableStateOf("") }
+            var height by remember { mutableStateOf("") }
+            var isMale by rememberSaveable { mutableStateOf(true) }
             val navigator = LocalNavigator.currentOrThrow
             val extension: List<Color> = when (activeProvider.type) {
                 ProviderType.GOOGLE_HEALTH -> listOf(
 
-                    Color(0xFF1428A0),
-                    Color(0xFF4A90E2),
+                    Color(0xFFFF5722),
+                    Color(0xAAE24A75),
                     Color.Transparent
                 )
 
@@ -134,11 +154,7 @@ class Profile(private val activeProvider: Provider)
                 mutableStateListOf(
                     SettingItem(SettingType.DARK_MODE, "Dark Mode (Light mode \nnot fully supported)"),
                     SettingItem(SettingType.NOTIFICATIONS, "Enable Notifications"),
-                    SettingItem(SettingType.BIOMETRICS, "Biometric Authentication"),
-                    SettingItem(SettingType.AUTO_UPDATE, "Auto-update"),
-                    SettingItem(SettingType.CLOUD_SYNC, "Cloud Sync"),
-                    SettingItem(SettingType.AUTO_CORRECT, "Auto-correct"),
-                    SettingItem(SettingType.HIDDEN_NOTES, "Show Hidden Notes"),
+                    SettingItem(SettingType.EXPERIMENTAL, "Show experimental features"),
                     SettingItem(SettingType.DEVELOPER_MODE, "Developer Mode")
                 )
             }
@@ -297,14 +313,169 @@ class Profile(private val activeProvider: Provider)
                         }
                     }
                 }
+
+                item{
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(300.dp)
+                    ){
+                        OutlinedTextField(
+                            value = weight,
+                            onValueChange = { weight = it },
+                            label = { Text("Weight (Kg)") },
+                            modifier = Modifier.align(Alignment.TopCenter),
+                            singleLine = true,
+                            shape = CircleShape,
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Number
+                            ),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedContainerColor = MaterialTheme.colorScheme.surfaceBright,
+                                unfocusedContainerColor = MaterialTheme.colorScheme.surfaceBright,
+
+                                focusedTextColor = Color.White,
+                                unfocusedTextColor = Color.White,
+
+                                focusedLabelColor = MaterialTheme.colorScheme.secondary,
+                                unfocusedLabelColor = Color.White,
+
+                                cursorColor = MaterialTheme.colorScheme.secondary,
+
+                                focusedBorderColor = MaterialTheme.colorScheme.tertiary,
+                                unfocusedBorderColor = MaterialTheme.colorScheme.secondary
+                            )
+                        )
+                        OutlinedTextField(
+                            value = height,
+                            onValueChange = { height = it },
+                            label = { Text("Height (Cm)") },
+                            modifier = Modifier.align(Alignment.TopCenter)
+                                .padding(top = 60.dp),
+                            singleLine = true,
+                            shape = CircleShape,
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Number
+                            ),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedContainerColor = MaterialTheme.colorScheme.surfaceBright,
+                                unfocusedContainerColor = MaterialTheme.colorScheme.surfaceBright,
+
+                                focusedTextColor = Color.White,
+                                unfocusedTextColor = Color.White,
+
+                                focusedLabelColor = MaterialTheme.colorScheme.secondary,
+                                unfocusedLabelColor = Color.White,
+
+                                cursorColor = MaterialTheme.colorScheme.secondary,
+
+                                focusedBorderColor = MaterialTheme.colorScheme.tertiary,
+                                unfocusedBorderColor = MaterialTheme.colorScheme.secondary
+                            )
+                        )
+                        OutlinedTextField(
+                            value = age,
+                            onValueChange = { age = it },
+                            label = { Text("Age (Years)") },
+                            modifier = Modifier.align(Alignment.TopCenter)
+                                .padding(top = 120.dp),
+                            singleLine = true,
+                            shape = CircleShape,
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Number
+                            ),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedContainerColor = MaterialTheme.colorScheme.surfaceBright,
+                                unfocusedContainerColor = MaterialTheme.colorScheme.surfaceBright,
+
+                                focusedTextColor = Color.White,
+                                unfocusedTextColor = Color.White,
+
+                                focusedLabelColor = MaterialTheme.colorScheme.secondary,
+                                unfocusedLabelColor = Color.White,
+
+                                cursorColor = MaterialTheme.colorScheme.secondary,
+
+                                focusedBorderColor = MaterialTheme.colorScheme.tertiary,
+                                unfocusedBorderColor = MaterialTheme.colorScheme.secondary
+                            )
+                        )
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .fillMaxHeight()
+                                .padding(top = 190.dp),
+                            contentAlignment = Alignment.TopCenter
+                        ) {
+                            SingleChoiceSegmentedButtonRow {
+                                SegmentedButton(
+                                    selected = isMale,
+                                    onClick = { isMale = true },
+                                    shape = SegmentedButtonDefaults.itemShape(
+                                        index = 0,
+                                        count = 2
+                                    )
+                                ) {
+                                    Text("Male")
+                                }
+
+                                SegmentedButton(
+                                    selected = !isMale,
+                                    onClick = { isMale = false },
+                                    shape = SegmentedButtonDefaults.itemShape(
+                                        index = 1,
+                                        count = 2
+                                    )
+                                ) {
+                                    Text("Female")
+                                }
+                            }
+                        }
+                        val bmr = if (isMale) {
+                            10 * (weight.toDoubleOrNull() ?: 0.0) +
+                                    6.25 * (height.toDoubleOrNull() ?: 0.0) -
+                                    5 * (age.toIntOrNull() ?: 0) + 5
+                        } else {
+                            10 * (weight.toDoubleOrNull() ?: 0.0) +
+                                    6.25 * (height.toDoubleOrNull() ?: 0.0) -
+                                    5 * (age.toIntOrNull() ?: 0) - 161
+                        }
+                        Box(
+                            Modifier.align(Alignment.BottomCenter)
+                                .fillMaxWidth(0.4f)
+                                .padding(bottom = 20.dp)
+                                .height(30.dp)
+                                .clip(RoundedCornerShape(50.dp))
+                                .background(MaterialTheme.colorScheme.surfaceBright)
+
+
+                        ) {
+                            Text(
+                                text = "Your BMR: " + bmr.toInt().toString() +"Kcal",
+                                modifier = Modifier.align(Alignment.Center)
+                                    ,
+                                color = Color.White,
+                                fontFamily = roboto,
+                                fontSize = 12.sp
+                            )
+                        }
+                    }
+                }
+
+
+
+
+
                 items(settingsList.size) { index ->
                     val setting = settingsList[index]
                     val title = setting.title
                     val shape = when (index) {
-                        0 -> RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp)  // first item
+                        0 -> RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomEnd = 10.dp, bottomStart = 10.dp)  // first item
                         settingsList.size - 1 -> RoundedCornerShape(
-                            bottomStart = 30.dp,
-                            bottomEnd = 30.dp
+                            bottomStart = 20.dp,
+                            bottomEnd = 20.dp,
+                            topEnd = 10.dp,
+                            topStart = 10.dp
                         ) // last item
                         else -> RoundedCornerShape(10.dp) // middle items
                     }
@@ -326,7 +497,7 @@ class Profile(private val activeProvider: Provider)
                             modifier = Modifier
                                 .padding(start = 20.dp, end = 40.dp)
                                 .align(Alignment.CenterStart),
-                            fontFamily = coolvetica
+                            fontFamily = googlesans
                         )
                         Switch(
                             modifier = Modifier
@@ -353,6 +524,14 @@ class Profile(private val activeProvider: Provider)
                             )
                         )
                     }
+                }
+
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(500.dp)
+                    )
                 }
             }
 
