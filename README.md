@@ -34,9 +34,10 @@ So relying on Samsung health SDK directly to request calorie data is necessary:
 
 
 
-<h1 align="center">Architecture</h1>
+<h2 align="center">Architecture</h2>
 
-<h1 align="center">Acknowledgements</h1>
+<h2 align="center">Acknowledgements</h2>
+
 Aero makes use of the following dependencies:
 Koin (Dependency injection)
 Material 3 Components
