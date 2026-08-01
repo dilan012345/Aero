@@ -1,8 +1,8 @@
-<h1 align="center">Aero</h1>
+<h1>>Aero</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white">
-  <img src="https://img.shields.io/badge/Kotlin-2.x-7F52FF?logo=kotlin&logoColor=white">
+  <img src="https://img.shields.io/badge/Kotlin-2.2.10-7F52FF?logo=kotlin&logoColor=white">
   <img src="https://img.shields.io/badge/Jetpack-Compose-4285F4">
 </p>
 
