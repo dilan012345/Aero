@@ -36,7 +36,7 @@ So relying on Samsung health SDK directly to request calorie data is necessary:
 
 <h2 align="center">Architecture</h2>
 
-<h2 align="center">Acknowledgements</h2>
+<h2 align="center">Third-Party Libraries</h2>
 <br>
 <p>
 <strong>Aero makes use of the following dependencies:</strong><br>
@@ -48,7 +48,6 @@ Voyager (Navigation) <br>
 
 <h2 align="center">Screenshots</h2>
 
-<h2 align="center">Screenshots</h2>
 
 <table align="center">
   <tr>
