@@ -5,18 +5,35 @@ A centralised app connecting:
 - Google fit / Google Health
 - Strava
 
-Aero has 2 main purposes:
-- Replacing UI with Aero's minimal material UI
-- Combining data alongside telemetry data gathered by the app, to produce precise values by adjusting a weighting factor:
-  For example:
-  
-| Provider | Steps | Bias |
-|----------|------:|-----:|
-| Google Health | 5000 | 50% |
-| Aero | 6000 | 30% |
-| Samsung Health | 5300 | 20% |
 
-**Total: 5360 Steps**
+**readme update forthcoming**
+
+Current stage:
+Redeveloped UI (see screenshots)
+Permission requests for:
+Steps
+Calories
+(via health connect)
+
+Samsung Health does not write data to health connect regarding:
+"Total calories burned, distance, power, speed, and VO2max"
+
+So relying on Samsung health SDK directly to request calorie data is necessary:
+  Status: Approved for use, using debug SHA-256 and SHealth developer mode
+  Initial release planned: 1st September
+  Package name to be changed
+
+
+Architecture
+
+Acknowledgements
+
+Aero makes use of the following dependencies:
+Koin (Dependency injection)
+Material 3 Components
+Voyager (Navigation)
+
+
 
 ## Screenshots
 
