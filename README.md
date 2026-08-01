@@ -36,5 +36,7 @@ Voyager (Navigation)
 
 
 ## Screenshots
-
-  
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/b7a07ee2-a12f-455d-b59b-c9b55570589c" width="250" alt="Home Screen"/>
+  <img src="https://github.com/user-attachments/assets/bfe25060-095f-4f98-8249-c0f026234fe7" width="250" alt="Dashboard"/>
+</p>
