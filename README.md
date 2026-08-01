@@ -6,14 +6,12 @@
   <img src="https://img.shields.io/badge/Jetpack-Compose-4285F4">
 </p>
 
-<div align="center">
-  <p>A centralised app connecting:</p>
-  <ul style="display:inline-block; text-align:left;">
-    <li>Samsung Health</li>
-    <li>Google Fit / Google Health</li>
-    <li>Strava</li>
-  </ul>
-</div>
+<p align="center">
+  A centralised app connecting:<br><br>
+  • Samsung Health<br>
+  • Google Fit / Google Health<br>
+  • Strava
+</p>
 
 
 
