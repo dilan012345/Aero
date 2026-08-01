@@ -61,6 +61,8 @@ Voyager (Navigation) <br>
     <td align="center">
       </td>
     <td align="center">
+      </td>
+    <td align="center">
       v1.3<br>
       <img src="https://github.com/user-attachments/assets/bfe25060-095f-4f98-8249-c0f026234fe7" width="250" alt="Dashboard"/>
     </td>
