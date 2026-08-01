@@ -1,12 +1,12 @@
-<h1 align="center">Aero</h1>
+<h1>Aero</h1>
 
-<p align="center">
+<p>
   <img src="https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white">
   <img src="https://img.shields.io/badge/Kotlin-2.2.10-7F52FF?logo=kotlin&logoColor=white">
   <img src="https://img.shields.io/badge/Jetpack-Compose-4285F4">
 </p>
 
-<p align="center">
+<p>
   A centralised app connecting:<br><br>
   - Samsung Health<br>
   - Google Fit / Google Health<br>
@@ -34,9 +34,9 @@ So relying on Samsung health SDK directly to request calorie data is necessary:
 
 
 
-<h2 align="center">Architecture</h2>
+<h2>Architecture</h2>
 
-<h2 align="center">Third-Party Libraries</h2>
+<h>Third-Party Libraries</h2>
 <br>
 <p>
 <strong>Aero makes use of the following dependencies:</strong><br>
@@ -46,7 +46,7 @@ Voyager (Navigation) <br>
 </p>
 
 
-<h2 align="center">Screenshots</h2>
+<h2>Screenshots</h2>
 
 
 <table align="center">
