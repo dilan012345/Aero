@@ -1,4 +1,4 @@
-# Aero
+<h1 align="center">Aero</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white">
