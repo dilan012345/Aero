@@ -1,4 +1,4 @@
-<h1>>Aero</h1>
+Aero
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white">
@@ -7,13 +7,13 @@
 </p>
 
 <p align="center">
-  A unified health dashboard for Android.
-</p>
-
-A centralised app connecting:
+ A centralised app connecting:
 - Samsung health
 - Google fit / Google Health
 - Strava
+
+</p>
+
 
 
 **readme update forthcoming**
