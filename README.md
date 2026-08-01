@@ -15,7 +15,7 @@
 
 
 
-**readme update forthcoming**
+
 
 Current stage:
 Redeveloped UI (see screenshots)
