@@ -15,7 +15,7 @@
 
 &nbsp;
 &nbsp;
-
+&nbsp;
 
 
 Current stage:
@@ -25,6 +25,9 @@ Steps
 Calories
 (via health connect)
 
+&nbsp;
+&nbsp;
+
 Samsung Health does not write data to health connect regarding:
 "Total calories burned, distance, power, speed, and VO2max"
 
@@ -33,7 +36,8 @@ So relying on Samsung health SDK directly to request calorie data is necessary:
   Initial release planned: 1st September
   Package name to be changed
 
-
+&nbsp;
+&nbsp;
 
 
 <h2>Third-Party Libraries</h2>
@@ -45,6 +49,8 @@ Material 3 Components <br>
 Voyager (Navigation) <br>
 </p>
 
+&nbsp;
+&nbsp;
 
 <h2>Screenshots</h2>
 
