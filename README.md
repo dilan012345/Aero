@@ -48,10 +48,13 @@ Voyager (Navigation) <br>
 
 ## Screenshots
   <p align="center">
-    Old
+    v1.1
   <img src="https://github.com/user-attachments/assets/b7a07ee2-a12f-455d-b59b-c9b55570589c" width="250" alt="Home Screen"/>
-    New
+    v1.3
   <img src="https://github.com/user-attachments/assets/bfe25060-095f-4f98-8249-c0f026234fe7" width="250" alt="Dashboard"/>
-    <img width="1080" height="2340" alt="Image" src="https://github.com/user-attachments/assets/1430e862-fb06-46fd-ad70-38b36a4485b7" width="250" />
-<img width="1080" height="2340" alt="Image" src="https://github.com/user-attachments/assets/84c912b6-27eb-4ed5-a99f-6dce72c1b154" width="250"/>
+    v1.3
+  <img src="https://github.com/user-attachments/assets/1430e862-fb06-46fd-ad70-38b36a4485b7" alt="Image" width="250" />
+    v1.3
+  <img src="https://github.com/user-attachments/assets/84c912b6-27eb-4ed5-a99f-6dce72c1b154" alt="Image" width="250" />
+    v1.3
 </p>
