@@ -8,9 +8,9 @@
 
 <p align="center">
   A centralised app connecting:<br><br>
-  • Samsung Health<br>
-  • Google Fit / Google Health<br>
-  • Strava
+  - Samsung Health<br>
+  - Google Fit / Google Health<br>
+  - Strava
 </p>
 
 
