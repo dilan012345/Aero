@@ -74,28 +74,28 @@ Voyager (Navigation) <br>
   <tr>
     <td align="center">
       v1.1<br>
-      <img src="https://github.com/user-attachments/assets/b7a07ee2-a12f-455d-b59b-c9b55570589c" width="450" alt="Home Screen"/>
+      <img src="https://github.com/user-attachments/assets/b7a07ee2-a12f-455d-b59b-c9b55570589c" width="350" alt="Home Screen"/>
     </td>
   </tr>
 
   <tr>
     <td align="center">
       v1.3<br>
-      <img src="https://github.com/user-attachments/assets/bfe25060-095f-4f98-8249-c0f026234fe7" width="450" alt="Dashboard"/>
+      <img src="https://github.com/user-attachments/assets/bfe25060-095f-4f98-8249-c0f026234fe7" width="350" alt="Dashboard"/>
     </td>
   </tr>
 
   <tr>
     <td align="center">
       v1.3<br>
-      <img src="https://github.com/user-attachments/assets/1430e862-fb06-46fd-ad70-38b36a4485b7" width="450" alt="Image"/>
+      <img src="https://github.com/user-attachments/assets/1430e862-fb06-46fd-ad70-38b36a4485b7" width="350" alt="Image"/>
     </td>
   </tr>
 
   <tr>
     <td align="center">
       v1.3<br>
-      <img src="https://github.com/user-attachments/assets/84c912b6-27eb-4ed5-a99f-6dce72c1b154" width="450" alt="Image"/>
+      <img src="https://github.com/user-attachments/assets/84c912b6-27eb-4ed5-a99f-6dce72c1b154" width="350" alt="Image"/>
     </td>
   </tr>
 </table>
