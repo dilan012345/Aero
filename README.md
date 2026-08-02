@@ -61,8 +61,7 @@ Voyager (Navigation) <br>
       v1.1<br>
       <img src="https://github.com/user-attachments/assets/b7a07ee2-a12f-455d-b59b-c9b55570589c" width="450" alt="Home Screen"/>
     </td>
-    <td align="center">
-      </td>
+    <br>
     <td align="center">
       v1.3<br>
       <img src="https://github.com/user-attachments/assets/bfe25060-095f-4f98-8249-c0f026234fe7" width="450" alt="Dashboard"/>
