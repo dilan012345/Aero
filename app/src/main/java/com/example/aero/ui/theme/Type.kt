@@ -27,6 +27,12 @@ val coolvetica = FontFamily(
         weight = FontWeight.Normal
     )
 )
+val boldonse = FontFamily(
+    Font(
+        resId = R.font.boldonse,
+        weight = FontWeight.Normal
+    )
+)
 
 val robotosb = FontFamily(
     Font(

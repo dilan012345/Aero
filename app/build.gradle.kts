@@ -25,7 +25,7 @@ android {
         minSdk = 33
         targetSdk = 37
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -51,7 +51,10 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation("com.russhwolf:multiplatform-settings:1.3.0")
     implementation("androidx.compose.material:material-icons-extended")
+    implementation(libs.androidx.graphics.shapes)
     implementation(libs.health.connect)
+    implementation(files("libs/samsung-health-data-api-1.1.0.aar"))
+    implementation("androidx.graphics:graphics-shapes:1.1.0")
 
     implementation("cafe.adriel.voyager:voyager-navigator:1.1.0-beta03")
     implementation("cafe.adriel.voyager:voyager-tab-navigator:1.1.0-beta03")

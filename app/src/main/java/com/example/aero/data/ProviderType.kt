@@ -4,6 +4,5 @@ enum class ProviderType {
     GOOGLE_HEALTH,
     SAMSUNG_HEALTH,
     STRAVA,
-
     UNIFIED
 }

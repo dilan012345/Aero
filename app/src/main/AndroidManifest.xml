@@ -5,9 +5,10 @@
         <package android:name="com.google.android.apps.healthdata" />
     </queries>
     <uses-permission android:name="android.permission.health.READ_STEPS"
+
         tools:ignore="HealthConnectPolicy"
         tools:node="merge"/>
-
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
     <uses-permission android:name="android.permission.health.WRITE_STEPS"
         tools:ignore="HealthConnectPolicy"
         tools:node="merge"/>
@@ -15,6 +16,10 @@
     <uses-permission android:name="android.permission.health.READ_ACTIVE_CALORIES_BURNED"
         tools:ignore="HealthConnectPolicy" />
     <uses-permission android:name="android.permission.health.READ_TOTAL_CALORIES_BURNED"
+        tools:ignore="HealthConnectPolicy" />
+    <uses-permission android:name="android.permission.health.READ_EXERCISE"
+        tools:ignore="HealthConnectPolicy" />
+    <uses-permission android:name="android.permission.health.READ_SLEEP"
         tools:ignore="HealthConnectPolicy" />
 
     <application
