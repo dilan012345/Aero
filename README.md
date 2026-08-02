@@ -7,53 +7,82 @@
 </p>
 
 <p>
-  A centralised app connecting:<br><br>
-  - Samsung Health<br>
-  - Google Fit / Google Health<br>
-  - Strava
+  A centralised app connecting:
 </p>
 
-&nbsp;
-&nbsp;
-&nbsp;
+<ul>
+  <li>Samsung Health</li>
+  <li>Google Fit / Google Health</li>
+  <li>Strava</li>
+</ul>
 
+<br>
 
-Current stage:
-Redeveloped UI (see screenshots)
-Permission requests for:
-Steps
-Calories
-(via health connect)
+<h2>Current Stage</h2>
 
-&nbsp;
-&nbsp;
+<table>
+  <tr>
+    <th>Feature</th>
+    <td>Redeveloped UI (see screenshots)</td>
+  </tr>
+  <tr>
+    <th>Health Connect Permissions</th>
+    <td>
+      Steps<br>
+      Calories
+    </td>
+  </tr>
+  <tr>
+    <th>Samsung Health</th>
+    <td>
+      Samsung Health does not write the following data to Health Connect:<br><br>
+      Total calories burned, distance, power, speed, and VO2max
+    </td>
+  </tr>
+  <tr>
+    <th>Samsung Health SDK</th>
+    <td>
+      Required for calorie data<br><br>
+      Status: Approved for use<br>
+      Using debug SHA-256 and SHealth developer mode
+    </td>
+  </tr>
+  <tr>
+    <th>Initial Release</th>
+    <td>1st September</td>
+  </tr>
+  <tr>
+    <th>Package Name</th>
+    <td>To be changed</td>
+  </tr>
+</table>
 
-Samsung Health does not write data to health connect regarding:
-"Total calories burned, distance, power, speed, and VO2max"
-
-So relying on Samsung health SDK directly to request calorie data is necessary:
-  Status: Approved for use, using debug SHA-256 and SHealth developer mode
-  Initial release planned: 1st September
-  Package name to be changed
-
-&nbsp;
-&nbsp;
-
+<br>
 
 <h2>Third-Party Libraries</h2>
-<br>
-<p>
-<strong>Aero makes use of the following dependencies:</strong><br>
-Koin (Dependency injection) <br>
-Material 3 Components <br>
-Voyager (Navigation) <br>
-</p>
 
-&nbsp;
-&nbsp;
+<table>
+  <tr>
+    <th>Library</th>
+    <td>Purpose</td>
+  </tr>
+  <tr>
+    <th>Koin</th>
+    <td>Dependency Injection</td>
+  </tr>
+  <tr>
+    <th>Material 3</th>
+    <td>UI Components</td>
+  </tr>
+  <tr>
+    <th>Voyager</th>
+    <td>Navigation</td>
+  </tr>
+</table>
+
+<br>
 
 <h2>Screenshots</h2>
-
 
 <table align="center">
   <tr>
@@ -63,8 +92,9 @@ Voyager (Navigation) <br>
     </td>
   </tr>
 </table>
-<table>
-  &nbsp;
+
+<table align="center">
+  <tr>
     <td align="center">
       v1.3<br>
       <img src="https://github.com/user-attachments/assets/bfe25060-095f-4f98-8249-c0f026234fe7" width="450" alt="Dashboard"/>
