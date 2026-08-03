@@ -42,12 +42,14 @@ class `Global Home`(): Screen {
                     UnifiedProvider(context)
                 )
             }
+            //creates all providers
 
             var selectedProvider by remember {
                 mutableStateOf(
                     ProviderSettings.getProvider()
                 )
             }
+            //
 
             val activeProvider = providers.first {
                 it.type == selectedProvider

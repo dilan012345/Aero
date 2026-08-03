@@ -44,7 +44,7 @@ import androidx.compose.ui.unit.sp
 import com.example.aero.R
 import com.example.aero.data.Provider
 import com.example.aero.data.ProviderType
-import com.example.aero.ui.screens.SettingType
+
 import com.example.aero.ui.theme.boldonse
 import com.example.aero.ui.theme.coolvetica
 import com.example.aero.ui.theme.googlesans
@@ -53,6 +53,12 @@ import com.example.aero.ui.theme.samsungsharpsans
 import com.example.aero.viewmodel.SettingsViewModel
 import org.koin.androidx.compose.koinViewModel
 
+enum class SettingType {
+    DARK_MODE,
+    NOTIFICATIONS,
+    EXPERIMENTAL,
+    DEVELOPER_MODE
+}
 @Composable
 fun SettingsDrawer(
     draw: Boolean,

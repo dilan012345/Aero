@@ -1,7 +1,7 @@
 package com.example.aero.data
 
 interface Provider {
-    val type: Any
+    val type: ProviderType
     suspend fun sync()
     suspend fun getSteps(): Int
     suspend fun getCalories(): Int

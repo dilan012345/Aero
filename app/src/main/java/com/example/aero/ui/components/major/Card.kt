@@ -19,7 +19,7 @@ fun Card(modifier: Modifier, content: @Composable BoxScope.() -> Unit){
             .then(other = modifier)
             .clip(RoundedCornerShape(20.dp))
             .background(MaterialTheme.colorScheme.tertiary)
-            .border(0.5.dp, Color.DarkGray,RoundedCornerShape(20.dp))
+            //.border(0.5.dp, Color.DarkGray,RoundedCornerShape(20.dp))
 
 
     ){

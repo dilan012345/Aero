@@ -44,6 +44,7 @@ fun BoxScope.UnifiedStepsCard (
     var steps by remember { mutableIntStateOf(0) }
     var target:Int by remember { mutableIntStateOf(10000)}
     LaunchedEffect(activeProvider) {
+        activeProvider.sync()
         steps = activeProvider.getSteps()
     }
 

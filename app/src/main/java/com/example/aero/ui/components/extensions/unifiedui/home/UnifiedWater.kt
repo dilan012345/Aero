@@ -1,6 +1,8 @@
 package com.example.aero.ui.components.extensions.unifiedui.home
 
+import android.util.Log
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -11,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.LinearWavyProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -25,16 +28,23 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.times
+import androidx.compose.ui.zIndex
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.Navigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import com.example.aero.data.Provider
+import com.example.aero.ui.components.extensions.unifiedui.water.UnifiedWaterPage
 import com.example.aero.ui.components.minor.rememberRotatedFanShape
 import com.example.aero.ui.theme.robotosb
 import com.example.aero.ui.theme.boldonse
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BoxScope.UnifiedWaterCard (
     screenWidth: Dp,
-    activeProvider: Provider,
 ) {
+
+    val navigator = LocalNavigator.currentOrThrow
+
     val progress = 0.5f
     Box(
         modifier = Modifier
@@ -44,8 +54,11 @@ fun BoxScope.UnifiedWaterCard (
             .height(150.dp)
             .clip(RoundedCornerShape(20.dp))
             .background(MaterialTheme.colorScheme.tertiary)
-
-    ) {
+            .clickable {
+                Log.d("CLICK", "Water clicked")
+                navigator.push(UnifiedWaterPage())
+            }
+    ){
         Text(
             text = "Water",
             fontFamily = robotosb,
@@ -79,6 +92,7 @@ fun BoxScope.UnifiedWaterCard (
                 .align(Alignment.CenterEnd)
                 .size(120.dp)
                 .offset(x = -20.dp)
+
         ) {
 
 
@@ -116,5 +130,6 @@ fun BoxScope.UnifiedWaterCard (
             }
 
         }
+
     }
 }

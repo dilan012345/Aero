@@ -1,4 +1,6 @@
-package com.example.aero.ui.components.extensions.unifiedui.steps
+package com.example.aero.ui.components.extensions.unifiedui.sleep
+
+import com.example.aero.ui.components.extensions.unifiedui.home.UnifiedSleepCard
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -56,11 +58,11 @@ import com.example.aero.ui.theme.robotosb
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
-class UnifiedStepsPage(): Screen {
+class UnifiedSleepPage(): Screen {
     @Composable
     override fun Content() {
         DebugLogger.log(
-            "Steps Recomposed",
+            "sleep Recomposed",
             Color.Green
         )
         val providerType = ProviderSettings.getProvider()
@@ -150,7 +152,7 @@ class UnifiedStepsPage(): Screen {
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Text(
-                            text = "Steps",
+                            text = "Sleep",
                             modifier = Modifier
                                 .align(Alignment.TopStart)
                                 .padding(start = 20.dp),
@@ -159,20 +161,6 @@ class UnifiedStepsPage(): Screen {
                             fontFamily = boldonse
                         )
                     }
-                }
-                item {
-                    Spacer(
-                        modifier = Modifier.height(10.dp)
-                    )
-                }
-
-                item {
-
-                    UnifiedStepsCard(
-                        screenWidth = screenWidth,
-                        activeProvider = activeProvider
-                    )
-
                 }
                 item {
                     Spacer(
@@ -225,8 +213,8 @@ class UnifiedStepsPage(): Screen {
                                         colors = sliderColors
                                     )
                                 },
-                                steps = 35,
-                                valueRange = 0f..18000f
+                                steps = 11,
+                                valueRange = 0f..12f
                             )
 
                             Box(
@@ -237,7 +225,7 @@ class UnifiedStepsPage(): Screen {
                                     .background(Color(0xFF2D2D2D))
                             ) {
                                 Text(
-                                    text = steps.roundToInt().toString() + " Steps",
+                                    text = steps.roundToInt().toString() + " hours",
                                     modifier = Modifier.align(Alignment.Center),
                                     color = MaterialTheme.colorScheme.tertiaryFixed,
                                     fontSize = 15.sp,
@@ -248,22 +236,53 @@ class UnifiedStepsPage(): Screen {
                         }
                     }
                 }
+
                 item {
                     Spacer(
                         modifier = Modifier.height(10.dp)
                     )
                 }
+
                 item{
                     Card(
                         modifier = Modifier
                             .fillMaxWidth(0.95f)
                             .height(300.dp)
                     ) {
-
+                        val bars =
+                            listOf(Bar("M", 5000f),
+                                Bar("T", 7200f),
+                                Bar("W", 800f),
+                                Bar("T", 6100f),
+                                Bar("F", 9500f),
+                                Bar("S", 12020f),
+                                Bar("S", 7000f)
+                            )
+                        BarChart(
+                            bars = bars,
+                            modifier = Modifier
+                                .align(Alignment.BottomCenter)
+                                .padding(bottom = 50.dp)
+                                .fillMaxWidth(0.9f)
+                                .height(200.dp),
+                            color = Color(0xFF598FB9)
+                        )
                     }
+                }
+                item {
+
+                    UnifiedSleepCard(
+                        screenWidth = screenWidth,
+                        activeProvider = activeProvider
+                    )
+
+                }
+                item {
+                    Spacer(
+                        modifier = Modifier.height(10.dp)
+                    )
                 }
             }
         }
     }
 }
-//card clicks clickable navigates to new steps page which prevents pop back - Cannot see simple fix so will leave it for now

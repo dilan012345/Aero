@@ -55,7 +55,7 @@ dependencies {
     implementation(libs.health.connect)
     implementation(files("libs/samsung-health-data-api-1.1.0.aar"))
     implementation("androidx.graphics:graphics-shapes:1.1.0")
-
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.36.0")
     implementation("cafe.adriel.voyager:voyager-navigator:1.1.0-beta03")
     implementation("cafe.adriel.voyager:voyager-tab-navigator:1.1.0-beta03")
     implementation("cafe.adriel.voyager:voyager-transitions:1.1.0-beta03")

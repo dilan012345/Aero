@@ -1,6 +1,7 @@
 package com.example.aero.ui.components.extensions.unifiedui.home
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -33,8 +34,12 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.times
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import com.example.aero.data.Provider
 import com.example.aero.R
+import com.example.aero.ui.components.extensions.unifiedui.sleep.UnifiedSleepPage
+import com.example.aero.ui.components.extensions.unifiedui.steps.UnifiedStepsPage
 import com.example.aero.ui.theme.boldonse
 
 @Composable
@@ -48,7 +53,7 @@ fun BoxScope.UnifiedSleepCard (
     LaunchedEffect(activeProvider) {
         value = activeProvider.getSleep().toInt()
     }
-
+    val navigator = LocalNavigator.currentOrThrow
     Box(
         modifier = Modifier
             .align(Alignment.TopCenter)
@@ -57,6 +62,9 @@ fun BoxScope.UnifiedSleepCard (
             .height(150.dp)
             .clip(RoundedCornerShape(20.dp))
             .background(MaterialTheme.colorScheme.tertiary)
+            .clickable {
+                navigator.push(UnifiedSleepPage())
+            }
 //Color(0xFFB4BFDC)
     ){
 

@@ -1,12 +1,28 @@
 package com.example.aero.ui.components.extensions.unifiedui.home
 
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.LoadingIndicator
+import androidx.compose.material3.MaterialShapes.Companion.Arrow
+import androidx.compose.material3.MaterialShapes.Companion.Circle
+import androidx.compose.material3.MaterialShapes.Companion.Fan
+import androidx.compose.material3.MaterialShapes.Companion.Oval
+import androidx.compose.material3.MaterialShapes.Companion.Pill
+import androidx.compose.material3.MaterialShapes.Companion.SemiCircle
+import androidx.compose.material3.MaterialShapes.Companion.Slanted
+import androidx.compose.material3.MaterialShapes.Companion.Square
+import androidx.compose.material3.MaterialShapes.Companion.Triangle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
@@ -20,7 +36,11 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.TransformOrigin
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
@@ -37,7 +57,7 @@ import com.example.aero.data.UnifiedProvider
 import com.example.aero.ui.components.major.HomeHeader
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-
+@ExperimentalMaterial3ExpressiveApi
 @Composable
 fun UnifiedHome(
     activeProvider: Provider,
@@ -106,7 +126,7 @@ fun UnifiedHome(
 
                 syncComplete = true
 
-                delay(1300)
+                delay(2000)
 
                 isRefreshing = false
                 syncComplete = false
@@ -115,20 +135,31 @@ fun UnifiedHome(
         state = pullState,
         modifier = Modifier.fillMaxSize(),
         indicator = {
-            Box(
-                modifier = Modifier.fillMaxWidth(),
-                contentAlignment = Alignment.TopCenter
-            ) {
-                PullToRefreshDefaults.Indicator(
-                    state = pullState,
-                    isRefreshing = isRefreshing,
-                    color = primary,
-                    containerColor = MaterialTheme.colorScheme.tertiary
-                )
+            if (isRefreshing) {
 
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(80.dp)
+                        .align(Alignment.TopCenter)
+                        .offset(y = 30.dp)
+                        .graphicsLayer {
+                            rotationZ = 180f
+                            transformOrigin = TransformOrigin.Center
+                        },
+                    contentAlignment = Alignment.Center
+                ) {
+                    LoadingIndicator(
+                        modifier = Modifier.graphicsLayer {
+                            translationY = (pullState.distanceFraction - 1f) * 100f
+                        },
+                        color = MaterialTheme.colorScheme.background,
 
+                    )
+                }
             }
-        }
+        },
+
     ) {
 
         LazyColumn(
@@ -161,29 +192,28 @@ fun UnifiedHome(
 
             }
             item {
-                Box {
+
                     UnifiedStepsCard(
                         screenWidth = screenWidth,
                         activeProvider = activeProvider
                     )
-                }
+
 
             }
             item {
-                Box {
+
                     UnifiedSleepCard(
                         screenWidth = screenWidth,
                         activeProvider = activeProvider,
                     )
-                }
+
             }
             item {
-                Box {
+
                     UnifiedWaterCard(
                         screenWidth = screenWidth,
-                        activeProvider = activeProvider,
                     )
-                }
+
             }
             item {
                 Box(
