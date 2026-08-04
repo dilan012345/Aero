@@ -33,7 +33,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.DialogWindowProvider
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.example.aero.ui.theme.boldonse
+import com.example.aero.ui.theme.robotoFlex
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.launch
 
@@ -84,7 +84,22 @@ fun WaterDrawer(
                         .padding(start = 20.dp),
                     color = MaterialTheme.colorScheme.tertiaryFixed,
                     fontSize = 20.sp,
-                    fontFamily = boldonse
+                    fontFamily = robotoFlex(
+                        wght = 685f,
+                        wdth = 113f,
+                        opsz = 130f,
+                        grad = 115f,
+                        slnt = -1f,
+                        xtra = 505f,
+                        xopq = 86f,
+                        yopq = 80f,
+                        ytas = 817f,
+                        ytde = -223f,
+                        ytfi = 571f,
+                        ytlc = 547f,
+                        ytuc = 656f
+
+                    )
                 )
 
                 Spacer(

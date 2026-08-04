@@ -49,6 +49,7 @@ android {
 
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
+    implementation("androidx.core:core-ktx:1.13.1")
     implementation("com.russhwolf:multiplatform-settings:1.3.0")
     implementation("androidx.compose.material:material-icons-extended")
     implementation(libs.androidx.graphics.shapes)

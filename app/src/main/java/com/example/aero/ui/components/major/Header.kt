@@ -53,7 +53,10 @@ import com.example.aero.ui.components.minor.Cookie9tosquare
 
 
 import com.example.aero.ui.screens.Setup
+
 import com.example.aero.ui.theme.boldonse
+import com.example.aero.ui.theme.robotoFlex
+
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable

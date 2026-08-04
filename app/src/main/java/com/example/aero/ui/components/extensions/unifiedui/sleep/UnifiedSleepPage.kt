@@ -174,7 +174,7 @@ class UnifiedSleepPage(): Screen {
                             .height(160.dp)
                     ) {
                         var steps by remember {
-                            mutableFloatStateOf(1500f)
+                            mutableFloatStateOf(9f)
                         }
                         val sliderColors = SliderDefaults.colors(
                             thumbColor = Color(0xFF598FB9),

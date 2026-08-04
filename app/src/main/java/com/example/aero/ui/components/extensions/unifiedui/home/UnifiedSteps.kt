@@ -33,6 +33,7 @@ import com.example.aero.ui.components.extensions.shealthui.home.WeeklyBarChartSm
 import com.example.aero.ui.components.extensions.unifiedui.steps.UnifiedStepsPage
 
 import com.example.aero.ui.theme.boldonse
+import com.example.aero.ui.theme.robotoFlex
 import com.example.aero.ui.theme.robotosb
 import java.text.NumberFormat
 @Composable

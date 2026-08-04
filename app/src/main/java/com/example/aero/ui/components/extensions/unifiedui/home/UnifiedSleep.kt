@@ -41,6 +41,7 @@ import com.example.aero.R
 import com.example.aero.ui.components.extensions.unifiedui.sleep.UnifiedSleepPage
 import com.example.aero.ui.components.extensions.unifiedui.steps.UnifiedStepsPage
 import com.example.aero.ui.theme.boldonse
+import com.example.aero.ui.theme.robotoFlex
 
 @Composable
 fun BoxScope.UnifiedSleepCard (
@@ -135,14 +136,44 @@ fun BoxScope.UnifiedSleepCard (
                         value > sleeptarget -> "You've smashed\nyour target!"
                         else -> "Take a nap!"
                     },
-                    fontFamily = boldonse,
+                    fontFamily = robotoFlex(
+                        wght = 685f,
+                        wdth = 113f,
+                        opsz = 130f,
+                        grad = 115f,
+                        slnt = -1f,
+                        xtra = 505f,
+                        xopq = 86f,
+                        yopq = 80f,
+                        ytas = 817f,
+                        ytde = -223f,
+                        ytfi = 571f,
+                        ytlc = 547f,
+                        ytuc = 656f
+
+                    ),
                     color = MaterialTheme.colorScheme.tertiaryFixed,
-                    fontSize = 16.sp
+                    fontSize = 25.sp
                 )
 
                 Text(
                     text = "Target: ${sleeptarget}h",
-                    fontFamily = boldonse,
+                    fontFamily = robotoFlex(
+                        wght = 685f,
+                        wdth = 113f,
+                        opsz = 130f,
+                        grad = 115f,
+                        slnt = -1f,
+                        xtra = 505f,
+                        xopq = 86f,
+                        yopq = 80f,
+                        ytas = 854f,
+                        ytde = -303f,
+                        ytfi = 788f,
+                        ytlc = 570f,
+                        ytuc = 760f
+
+                    ),
                     color = Color.Gray,
                     fontSize = 15.sp
                 )

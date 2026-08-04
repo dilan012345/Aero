@@ -24,4 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Aero"
 include(":app")
- 
+include(":app:scripts")
